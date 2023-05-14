@@ -114,7 +114,7 @@ const Settings = ({ setHide }) => {
             })
           }
         >
-          <TestAudio id={selectedDeviceIDs.audioOutput} />
+          
         </DeviceSelector>
       ) : null}
     </Box>

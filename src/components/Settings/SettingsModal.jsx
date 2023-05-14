@@ -30,18 +30,7 @@ const settings = [
     icon: SettingsIcon,
     content: DeviceSettings,
   },
-  {
-    tabName: "notifications",
-    title: "Notifications",
-    icon: NotificationsIcon,
-    content: NotificationSettings,
-  },
-  {
-    tabName: "layout",
-    title: "Layout",
-    icon: GridFourIcon,
-    content: LayoutSettings,
-  },
+  
 ];
 
 const SettingsModal = ({ open, onOpenChange, children }) => {

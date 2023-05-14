@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, useTheme } from "@100mslive/react-ui";
-import { CREATE_ROOM_DOC_URL } from "../common/constants";
+import { CREATE_ROOM_DOC_URL, CREATE_ROOM_DOC_URL2, CREATE_ROOM_DOC_URL3 } from "../common/constants";
 
 function ErrorPage({ error }) {
   const themeType = useTheme().themeType;
@@ -43,9 +43,25 @@ function ErrorPage({ error }) {
                 rel="noopener noreferrer"
                 style={{ textDecoration: "underline" }}
               >
-                Click here
+                Meeting 1
               </a>{" "}
-              for next steps
+              <a
+                href={CREATE_ROOM_DOC_URL2}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "underline" }}
+              >
+                Meeting 1
+              </a>{" "}
+              <a
+                href={CREATE_ROOM_DOC_URL3}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "underline" }}
+              >
+                Meeting 1
+              </a>{" "}
+              
             </Text>
           </Flex>
         ) : (

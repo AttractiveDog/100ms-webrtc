@@ -66,12 +66,7 @@ export const ParticipantList = () => {
       <Flex direction="column" css={{ size: "100%" }}>
         <Flex align="center" css={{ w: "100%", mb: "$10" }}>
           <Text css={{ fontWeight: "$semiBold", mr: "$4" }}>Participants</Text>
-          <ParticipantFilter
-            selection={filter}
-            onSelection={setFilter}
-            isConnected={isConnected}
-            roles={rolesWithParticipants}
-          />
+          
           <IconButton
             onClick={toggleSidepane}
             css={{ w: "$11", h: "$11", ml: "auto" }}
@@ -79,9 +74,7 @@ export const ParticipantList = () => {
             <CrossIcon />
           </IconButton>
         </Flex>
-        {!filter?.search && participants.length === 0 ? null : (
-          <ParticipantSearch onSearch={onSearch} />
-        )}
+        
         {participants.length === 0 && (
           <Flex align="center" justify="center" css={{ w: "100%", p: "$8 0" }}>
             <Text variant="sm">
@@ -95,14 +88,7 @@ export const ParticipantList = () => {
           setSelectedPeerId={setSelectedPeerId}
         />
       </Flex>
-      {selectedPeerId && (
-        <RoleChangeModal
-          peerId={selectedPeerId}
-          onOpenChange={value => {
-            !value && setSelectedPeerId(null);
-          }}
-        />
-      )}
+     
     </Fragment>
   );
 };

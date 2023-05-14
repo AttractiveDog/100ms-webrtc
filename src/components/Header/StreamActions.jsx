@@ -135,116 +135,13 @@ const StartRecording = () => {
   if (isBrowserRecordingOn) {
     return (
       <Popover.Root open={open} onOpenChange={setOpen}>
-        <Popover.Trigger asChild>
-          <Button
-            variant="danger"
-            data-testid="stop_recording"
-            icon
-            outlined
-            onClick={() => setOpen(true)}
-          >
-            <RecordIcon />
-            <Text
-              as="span"
-              css={{ "@md": { display: "none" }, color: "currentColor" }}
-            >
-              Stop Recording
-            </Text>
-          </Button>
-        </Popover.Trigger>
-        <Popover.Portal>
-          <Popover.Content align="end" sideOffset={8} css={{ w: "$64" }}>
-            <Text variant="body" css={{ color: "$textMedEmp" }}>
-              Are you sure you want to end the recording?
-            </Text>
-            <Button
-              data-testid="stop_recording_confirm"
-              variant="danger"
-              icon
-              css={{ ml: "auto" }}
-              onClick={async () => {
-                try {
-                  await hmsActions.stopRTMPAndRecording();
-                } catch (error) {
-                  ToastManager.addToast({
-                    title: error.message,
-                    variant: "error",
-                  });
-                }
-                setOpen(false);
-              }}
-            >
-              Stop
-            </Button>
-          </Popover.Content>
-        </Popover.Portal>
+        
       </Popover.Root>
     );
   }
   return (
     <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>
-        <Button
-          data-testid="start_recording"
-          variant="standard"
-          icon
-          disabled={recordingStarted || isStreamingOn}
-          onClick={() => setOpen(true)}
-        >
-          {recordingStarted ? (
-            <Loading size={24} color="currentColor" />
-          ) : (
-            <RecordIcon />
-          )}
-          <Text
-            as="span"
-            css={{ "@md": { display: "none" }, color: "currentColor" }}
-          >
-            {recordingStarted ? "Starting" : "Start"} Recording
-          </Text>
-        </Button>
-      </Popover.Trigger>
-      <Popover.Content align="end" sideOffset={8} css={{ w: "$64" }}>
-        <ResolutionInput
-          testId="recording_resolution"
-          css={{ flexDirection: "column", alignItems: "start" }}
-          onResolutionChange={setResolution}
-        />
-        <Button
-          data-testid="start_recording_confirm"
-          variant="primary"
-          icon
-          css={{ ml: "auto" }}
-          type="submit"
-          disabled={recordingStarted || isStreamingOn}
-          onClick={async () => {
-            try {
-              setRecordingState(true);
-              await hmsActions.startRTMPOrRecording({
-                meetingURL: recordingUrl,
-                resolution: getResolution(resolution),
-                record: true,
-              });
-            } catch (error) {
-              if (error.message.includes("stream already running")) {
-                ToastManager.addToast({
-                  title: "Recording already running",
-                  variant: "error",
-                });
-              } else {
-                ToastManager.addToast({
-                  title: error.message,
-                  variant: "error",
-                });
-              }
-              setRecordingState(false);
-            }
-            setOpen(false);
-          }}
-        >
-          Start
-        </Button>
-      </Popover.Content>
+     
     </Popover.Root>
   );
 };

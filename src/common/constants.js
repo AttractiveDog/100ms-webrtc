@@ -162,7 +162,11 @@ export const SUBSCRIBED_NOTIFICATIONS = {
 };
 
 export const CREATE_ROOM_DOC_URL =
-  "https://github.com/100mslive/100ms-web/wiki/Creating-and-joining-a-room";
+  "http://localhost:3000/meeting/6460f50ca0753f12ba163632/guest";
+export const CREATE_ROOM_DOC_URL2 =
+  "http://localhost:3000/meeting/646103f0a0753f12ba163633/guest";
+export const CREATE_ROOM_DOC_URL3 =
+  "http://localhost:3000/meeting/6460f50c74cba97f9152c40a/guest";
 export const HLS_TIMED_METADATA_DOC_URL =
   "https://www.100ms.live/docs/javascript/v2/how--to-guides/record-and-live-stream/hls/hls-timed-metadata";
 
