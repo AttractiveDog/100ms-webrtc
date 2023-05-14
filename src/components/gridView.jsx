@@ -8,7 +8,7 @@ import { useAppConfig } from "./AppData/useAppConfig";
 import { useIsHeadless } from "./AppData/useUISettings";
 
 const MAX_TILES_FOR_MOBILE = 4;
-
+ 
 /**
  * the below variables are for showing webinar etc. related image if required on certain meeting urls
  */
